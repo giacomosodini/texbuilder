@@ -33,5 +33,5 @@ jobs:
           path: build/main.pdf
 
       - name: move
-        run: mv main.pdf build/main.pdf
+        run: mv build/main.pdf ./build/main.pdf
 
