@@ -27,13 +27,8 @@ jobs:
       - name: Build PDF
         run: tectonic -X compile source/main.tex
 
-  move:
-  steps:
-  - uses: actions/checkout@v3
-  - run: mkdir -p build/
-  - run: echo hello > build/main.pdf
-  - uses: actions/upload-artifact@v3
-  with:
-    name: my-artifact
-    path: build/main.pdf
-
+      - run: echo hello > source/main.pdf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: main
+          path: source/main.pdf
