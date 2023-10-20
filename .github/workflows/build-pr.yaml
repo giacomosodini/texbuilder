@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: my-artifact
+          name: main
           path: ./source/main.pdf
       - name: Display structure of downloaded files
         run: ls -R
