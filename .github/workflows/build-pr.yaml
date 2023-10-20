@@ -31,3 +31,6 @@ jobs:
         with:
           name: main
           path: build/main.pdf
+  script:
+    # Feel free to change the mv target to something else. You will need to update the index.html though
+    - mv main.pdf build/main.pdf
