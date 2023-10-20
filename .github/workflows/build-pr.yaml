@@ -31,16 +31,17 @@ jobs:
         with:
           name: main
           path: source/main.pdf
-          
-  pages:
-    image: alpine:latest
-    stage: deploy
-    dependencies:
-      - build
-    script:
-    # Feel free to change the mv target to something else. You will need to update the index.html though
-      - mv main.pdf source/main.pdf
 
-  artifacts:
-    paths:
-      - source
+  ciao:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+          with:
+          name: my-artifact
+          path: source/main.pdf
+    
+      - name: Display structure of downloaded files
+          run: ls -R
+          working-directory: source/main.pdf
