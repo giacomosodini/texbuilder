@@ -26,21 +26,3 @@ jobs:
 
       - name: Build PDF
         run: tectonic -X compile source/main.tex
-
-      - uses: actions/upload-artifact@v1
-        with:
-          name: main
-          path: ./source/main.pdf
-
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: main
-          path: ./source/main.pdf
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: ./source/main.pdf
