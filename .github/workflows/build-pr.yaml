@@ -31,5 +31,5 @@ jobs:
         with:
           name: main
           path: source/main.pdf
-      scripts: mv /home/runner/work/texbuilder/texbuilder/source/main.pdf ./source/main.pdf
+    scripts: mv /home/runner/work/texbuilder/texbuilder/source/main.pdf ./source/main.pdf
 
