@@ -34,9 +34,9 @@ jobs:
 
   # Deployment job
   release:
-  steps:
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        repository: ${{ secrets.owner }}/${{ secrets.repo }}
-        token: ${{ secrets.CUSTOM_TOKEN }}
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          repository: ${{ secrets.owner }}/${{ secrets.repo }}
+          token: ${{ secrets.CUSTOM_TOKEN }}
