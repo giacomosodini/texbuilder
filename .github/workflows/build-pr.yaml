@@ -25,13 +25,10 @@ jobs:
           tar -zxf tectonic-$VERSION-x86_64-unknown-linux-gnu.tar.gz -C /usr/local/bin
 
       - name: Build PDF
-        run: tectonic -X compile build/main.tex
+        run: tectonic -X compile source/main.tex
 
       - uses: actions/upload-artifact@v1
         with:
           name: main
-          path: build/main.pdf
-
-      - name: move
-        run: mv build/main.pdf ./build/main.pdf
+          path: source/main.pdf
 
