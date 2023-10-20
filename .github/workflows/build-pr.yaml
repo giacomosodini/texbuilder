@@ -27,7 +27,7 @@ jobs:
       - name: Build PDF
         run: tectonic -X compile build/main.tex
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v1
         with:
           name: main
           path: build/main.pdf
