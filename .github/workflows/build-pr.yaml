@@ -1,9 +1,10 @@
 name: pulls
 
 on:
-  pull_request_target:
-    branches: [main]
-
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
 env:
   REPO_URL: https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}
 
