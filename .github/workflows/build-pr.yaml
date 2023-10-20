@@ -30,4 +30,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: main
-          path: ./build
+          path: build/main.pdf
+    script:
+      - mv main.pdf build/main.pdf
+
