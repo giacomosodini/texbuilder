@@ -30,7 +30,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: main
-          path: source/main.pdf
+          path: build/main.pdf
 
       - name: move
-          run: mv /home/runner/work/texbuilder/texbuilder/source/main.pdf ./source/main.pdf
+        run: mv /home/runner/work/texbuilder/texbuilder/source/main.pdf ./build/main.pdf
