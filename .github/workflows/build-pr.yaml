@@ -32,24 +32,15 @@ jobs:
           name: main
           path: source/main.pdf
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: build
-          path: build
-      - name: Deploy to S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          aws s3 cp \
-          --recursive \
-          --acl public-read \
-          --region ap-southeast-2 \
-          ./build ./source/main.pdf
+  pages:
+  image: alpine:latest
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    # Feel free to change the mv target to something else. You will need to update the index.html though
+    - mv main.pdf source/main.pdf
+
+  artifacts:
+    paths:
+      - source
