@@ -31,14 +31,14 @@ jobs:
         with:
           name: main
           path: source/main.pdf
-
-  # Deployment job
-  release:
+  build:
+    name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - name: Release
+      - name: Release with Notes
         uses: softprops/action-gh-release@v1
         with:
-          tag_name : test
-          repository: ${{ secrets.owner }}/${{ secrets.repo }}
-          token: ${{ secrets.CUSTOM_TOKEN }}
+          files: |
+            source/main.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
