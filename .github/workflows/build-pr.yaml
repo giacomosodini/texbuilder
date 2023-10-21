@@ -31,7 +31,7 @@ jobs:
         with:
           name: main
           path: source/main.pdf
-  build:
+  cucu:
     runs-on: ubuntu-latest
     steps:
       - name: Release with Notes
