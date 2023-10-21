@@ -10,6 +10,9 @@ on:
 env:
   REPO_URL: https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
