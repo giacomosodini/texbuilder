@@ -3,6 +3,8 @@ name: pulls
 on:
   # Runs on pushes targeting the default branch
   push:
+    tags:
+    - 'v*'
     branches:
       - main
 env:
