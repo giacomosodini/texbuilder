@@ -29,13 +29,6 @@ jobs:
       - name: Build PDF
         run: tectonic -X compile source/main.tex
 
-      - uses: actions/upload-artifact@v1
-        with:
-          name: main
-          path: source/main.pdf
-  cucu:
-    runs-on: ubuntu-latest
-    steps:
       - name: Release with Notes
         uses: softprops/action-gh-release@v1
         with:
