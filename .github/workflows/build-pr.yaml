@@ -3,8 +3,6 @@ name: pulls
 on:
   # Runs on pushes targeting the default branch
   push:
-    tags:
-      - 'v*'
     branches:
       - main
 env:
@@ -35,6 +33,8 @@ jobs:
           path: source/main.pdf
   cucu:
     runs-on: ubuntu-latest
+    tags:
+      - 'v*'
     steps:
       - name: Release with Notes
         uses: softprops/action-gh-release@v1
