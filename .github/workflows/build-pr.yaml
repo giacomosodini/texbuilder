@@ -32,7 +32,6 @@ jobs:
           name: main
           path: source/main.pdf
   build:
-    name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
       - name: Release with Notes
